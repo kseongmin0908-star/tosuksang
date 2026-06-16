@@ -117,18 +117,11 @@ header.scrolled{
 .brand{display:flex;align-items:center;gap:14px;color:#fff;transition:color .5s}
 header.scrolled .brand{color:var(--ink)}
 .seal{
-  width:46px;height:46px;flex:none;
-  display:grid;place-items:center;
-  background:var(--clay);
-  color:#F2EADA;
-  font-family:var(--serif-display);
-  font-size:.72rem;line-height:1;
-  letter-spacing:1px;
-  border-radius:3px;
-  box-shadow:0 4px 18px rgba(0,0,0,.18);
-  writing-mode:vertical-rl;
-  padding:5px 3px;
-  text-align:center;
+  width:50px;height:50px;flex:none;
+  object-fit:cover;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 4px 18px rgba(0,0,0,.2);
 }
 .brand-name{font-family:var(--serif-display);font-size:1.35rem;letter-spacing:.06em;line-height:1}
 .brand-sub{font-family:var(--latin);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8;display:block;margin-top:3px}
@@ -453,7 +446,7 @@ header.scrolled .nav-tel{color:var(--ink)}
 <!-- HEADER -->
 <header id="header">
   <a href="#top" class="brand">
-    <span class="seal">土石桑</span>
+    <img class="seal" src="assets/img/profile.jpg" alt="토석상 로고" />
     <span><span class="brand-name">토석상</span><span class="brand-sub">Tosuksang Stay</span></span>
   </a>
   <nav class="main" id="nav">
@@ -606,22 +599,6 @@ header.scrolled .nav-tel{color:var(--ink)}
       </div>
     </div>
 
-    <div class="room-card rev reveal">
-      <div class="room-media"><img src="assets/img/goghroom.jpg" alt="고흐의 방"/></div>
-      <div class="room-body">
-        <span class="room-tag latin">La Chambre · Van Gogh</span>
-        <h3>고흐의 방</h3>
-        <p class="muted" style="font-size:.95rem">두 사람을 위한 작은 방</p>
-        <ul class="room-spec">
-          <li>기준 2인 · 최대 5인</li><li>아늑한 단독 객실</li><li>산뷰</li>
-        </ul>
-        <p class="room-desc">빈센트 반 고흐의 ‘아를의 방’에서 영감을 얻어 현대적으로 재해석한 객실. 단출하지만 다정한, 두 사람을 위한 머무름입니다.</p>
-        <div class="room-price">
-          <div class="price-item"><span class="lab latin">Weekday</span><span class="val">120,000<small>원</small></span></div>
-          <a href="https://booking.pension.onda.me/137862/calendar" target="_blank" rel="noopener" class="btn-primary" style="margin-left:auto;padding:12px 26px">예약 ↗</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 

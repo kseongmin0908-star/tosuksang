@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>토석상 土石床 · 단양 한옥 독채 스테이</title>
+<title>토석상 土石桑 · 단양 한옥 독채 스테이</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="256x256" href="assets/img/favicon-256.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png" />
 <link rel="shortcut icon" href="assets/img/favicon-32.png" />
 <meta name="description" content="도예가가 빚은 터 위에, 하루 한 팀만을 위한 프라이빗 독채 한옥. 단양 방곡도예촌의 토석상 — 도자기·다도·전통가마 찜질방이 함께하는 한옥 스테이." />
-<meta property="og:title" content="토석상 土石床 · 단양 한옥 독채 스테이" />
+<meta property="og:title" content="토석상 土石桑 · 단양 한옥 독채 스테이" />
 <meta property="og:description" content="도예가가 빚은 터 위에, 하루 한 팀만을 위한 프라이빗 독채 한옥." />
 <meta property="og:image" content="assets/img/hero-autumn.jpg" />
 <meta property="og:type" content="website" />
@@ -391,6 +391,7 @@ header.scrolled .nav-tel{color:var(--ink)}
 /* cta actions */
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 /* room image slider */
+.int-slider{position:relative;aspect-ratio:3/4;border-radius:3px;overflow:hidden}
 .room-slider{position:absolute;inset:0;overflow:hidden}
 .room-slider .slides{display:flex;height:100%;transition:transform .6s var(--ease)}
 .room-slider .slides img{min-width:100%;width:100%;height:100%;object-fit:cover;flex:none}
@@ -452,7 +453,7 @@ header.scrolled .nav-tel{color:var(--ink)}
 <!-- HEADER -->
 <header id="header">
   <a href="#top" class="brand">
-    <span class="seal">土石床</span>
+    <span class="seal">土石桑</span>
     <span><span class="brand-name">토석상</span><span class="brand-sub">Tosuksang Stay</span></span>
   </a>
   <nav class="main" id="nav">
@@ -476,7 +477,7 @@ header.scrolled .nav-tel{color:var(--ink)}
   <div class="hero-inner">
     <div class="wrap">
       <h1 class="hero-title">
-        <span class="hero-han">土 石 床</span>
+        <span class="hero-han">土 石 桑</span>
         <span class="ko">토석상</span>
       </h1>
       <p class="hero-tag">도예가가 빚은 터 위에,<br/>하루 한 팀만을 위한 프라이빗 독채 한옥</p>
@@ -549,7 +550,18 @@ header.scrolled .nav-tel{color:var(--ink)}
       </div>
       <div class="int-col">
         <img class="int-tall" src="assets/img/interior-feature.jpg" alt="서까래 천장 아래 원목 식탁이 놓인 한옥 거실"/>
-        <img class="int-wide" src="assets/img/retro-wine.jpg" alt="빈티지 소품 선반"/>
+        <div class="int-slider">
+          <div class="room-slider">
+            <div class="slides">
+              <img src="assets/img/retro-wine.jpg" alt="빈티지 카세트와 와인병 선반"/>
+              <img src="assets/img/bookcafe-1.jpg" alt="레트로 책장과 빈티지 TV"/>
+              <img src="assets/img/retro-gramophone.jpg" alt="축음기와 레트로 소품"/>
+            </div>
+            <button class="slide-nav prev" aria-label="이전 사진">‹</button>
+            <button class="slide-nav next" aria-label="다음 사진">›</button>
+            <div class="slide-dots"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -760,7 +772,7 @@ header.scrolled .nav-tel{color:var(--ink)}
 <!-- CTA / LOCATION -->
 <section class="cta" id="reserve">
   <div class="wrap reveal">
-    <span class="han">土 石 床</span>
+    <span class="han">土 石 桑</span>
     <h2>하루 한 팀의 한옥,<br/>지금 비워 두었습니다</h2>
     <p>흙과 돌이 빚은 적막 속에서, 온전히 쉬어 가시기 바랍니다.</p>
     <p class="cta-addr latin">충북 단양군 대강면 방곡2길 31-1 · Danyang, Korea</p>
@@ -776,7 +788,7 @@ header.scrolled .nav-tel{color:var(--ink)}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <span class="brand-name" style="font-family:var(--serif-display)">토석상 土石床</span>
+        <span class="brand-name" style="font-family:var(--serif-display)">토석상 土石桑</span>
         <p>도예가가 빚은 터 위에, 하루 한 팀만을 위한 단양의 프라이빗 독채 한옥.</p>
       </div>
       <div class="foot-col">
@@ -797,7 +809,7 @@ header.scrolled .nav-tel{color:var(--ink)}
       충북 단양군 대강면 방곡2길 31-1 · 예약·문의 <a href="tel:010-8327-4052">010-8327-4052</a>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 토석상 (土石床) Tosuksang Stay. All rights reserved.</span>
+      <span>© 2026 토석상 (土石桑) Tosuksang Stay. All rights reserved.</span>
       <span class="latin">Private Hanok Stay · Danyang</span>
     </div>
   </div>

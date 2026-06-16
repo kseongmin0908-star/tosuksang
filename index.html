@@ -390,6 +390,18 @@ header.scrolled .nav-tel{color:var(--ink)}
 .nav-tel:hover{color:var(--clay-light)}
 /* cta actions */
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* room image slider */
+.room-slider{position:absolute;inset:0;overflow:hidden}
+.room-slider .slides{display:flex;height:100%;transition:transform .6s var(--ease)}
+.room-slider .slides img{min-width:100%;width:100%;height:100%;object-fit:cover;flex:none}
+.slide-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;border-radius:50%;border:none;background:rgba(36,30,23,.42);color:#fff;font-family:var(--latin);font-size:1.7rem;line-height:1;cursor:pointer;transition:background .3s,transform .3s;display:grid;place-items:center;backdrop-filter:blur(2px)}
+.slide-nav:hover{background:rgba(156,87,51,.9)}
+.slide-nav.prev{left:14px}.slide-nav.next{right:14px}
+.slide-nav span{margin-top:-3px}
+.slide-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:8px}
+.slide-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,.55);cursor:pointer;transition:all .35s var(--ease);padding:0}
+.slide-dots button.active{background:#fff;width:22px;border-radius:4px}
+.slide-count{position:absolute;top:14px;right:14px;z-index:4;background:rgba(36,30,23,.5);color:#fff;font-family:var(--latin);font-size:.82rem;letter-spacing:.05em;padding:4px 11px;border-radius:20px;backdrop-filter:blur(2px)}
 
 /* lightbox */
 .lightbox{position:fixed;inset:0;background:rgba(18,14,10,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
@@ -553,7 +565,20 @@ header.scrolled .nav-tel{color:var(--ink)}
     </div>
 
     <div class="room-card reveal">
-      <div class="room-media"><img src="assets/img/bedroom-3.jpg" alt="토석상 독채 침실"/></div>
+      <div class="room-media">
+        <div class="room-slider">
+          <div class="slides">
+            <img src="assets/img/room-1.jpg" alt="토석상 독채 원목 식탁 거실"/>
+            <img src="assets/img/room-2.jpg" alt="토석상 독채 침실"/>
+            <img src="assets/img/room-3.jpg" alt="토석상 독채 온돌방"/>
+            <img src="assets/img/room-4.jpg" alt="토석상 독채 거실 코너"/>
+            <img src="assets/img/room-5.jpg" alt="토석상 독채 수납 공간"/>
+          </div>
+          <button class="slide-nav prev" aria-label="이전 사진">‹</button>
+          <button class="slide-nav next" aria-label="다음 사진">›</button>
+          <div class="slide-dots"></div>
+        </div>
+      </div>
       <div class="room-body">
         <span class="room-tag latin">The Private House</span>
         <h3>토석상 독채</h3>
@@ -803,6 +828,24 @@ document.querySelectorAll('.gal-grid img, .season-grid img').forEach(img=>{
 });
 lb.addEventListener('click',()=>lb.classList.remove('open'));
 addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')});
+
+// room image slider
+document.querySelectorAll('.room-slider').forEach(slider=>{
+  const slides=slider.querySelector('.slides');
+  const total=slides.children.length;
+  if(total<2) return;
+  let idx=0;
+  const dotsWrap=slider.querySelector('.slide-dots');
+  const count=document.createElement('div');count.className='slide-count';slider.appendChild(count);
+  for(let i=0;i<total;i++){const b=document.createElement('button');b.setAttribute('aria-label',(i+1)+'번 사진');b.addEventListener('click',()=>go(i));dotsWrap.appendChild(b);}
+  function go(i){idx=(i+total)%total;slides.style.transform='translateX(-'+(idx*100)+'%)';[...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active',j===idx));count.textContent=(idx+1)+' / '+total;}
+  go(0);
+  slider.querySelector('.prev').addEventListener('click',()=>go(idx-1));
+  slider.querySelector('.next').addEventListener('click',()=>go(idx+1));
+  let sx=0;
+  slider.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+  slider.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(idx+(dx<0?1:-1));},{passive:true});
+});
 </script>
 </body>
 </html>

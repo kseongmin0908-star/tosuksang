@@ -383,6 +383,10 @@ header.scrolled .nav-tel{color:var(--ink)}
 .nav-tel:hover{color:var(--clay-light)}
 /* cta actions */
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* media stack (photo + videos, no carousel) */
+.room-media.media-stack{position:relative;display:flex;flex-direction:column;gap:12px;height:auto;min-height:0;overflow:visible}
+.room-media.media-stack img,.room-media.media-stack video{position:static;inset:auto;width:100%;height:auto;display:block;border-radius:2px;object-fit:contain;transition:none;background:#000}
+.room-card:hover .media-stack img{transform:none}
 /* room image slider */
 .int-slider{position:relative;aspect-ratio:3/4;border-radius:3px;overflow:hidden}
 .room-slider{position:absolute;inset:0;overflow:hidden}
@@ -605,7 +609,11 @@ header.scrolled .nav-tel{color:var(--ink)}
     </div>
 
     <div class="room-card rev reveal">
-      <div class="room-media"><img src="assets/img/garden-autumn-table.jpg" alt="토석상 정원 바베큐장"/></div>
+      <div class="room-media media-stack">
+        <img src="assets/img/bbq-1.jpg" alt="토석상 바베큐장"/>
+        <video src="assets/img/bbq-2.mp4" controls playsinline preload="metadata"></video>
+        <video src="assets/img/bbq-3.mp4" controls playsinline preload="metadata"></video>
+      </div>
       <div class="room-body">
         <span class="room-tag latin">Garden BBQ</span>
         <h3>바베큐</h3>

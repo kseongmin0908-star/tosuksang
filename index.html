@@ -383,6 +383,13 @@ header.scrolled .nav-tel{color:var(--ink)}
 .nav-tel:hover{color:var(--clay-light)}
 /* cta actions */
 .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* brand buttons */
+.btn-brand{display:inline-flex;align-items:center;gap:8px;border-radius:3px;padding:12px 22px;font-family:var(--serif-body);font-size:.95rem;letter-spacing:.02em;color:#fff;border:1px solid;cursor:pointer;transition:all .35s var(--ease)}
+.btn-brand svg{flex:none}
+.btn-youtube{background:#FF0000;border-color:#FF0000}
+.btn-youtube:hover{background:#d90000;border-color:#d90000;transform:translateY(-2px)}
+.btn-naver{background:#03C75A;border-color:#03C75A}
+.btn-naver:hover{background:#02af4f;border-color:#02af4f;transform:translateY(-2px)}
 /* media stack (photo + videos, no carousel) */
 .room-media.media-stack{position:relative;display:flex;flex-direction:column;gap:12px;height:auto;min-height:0;overflow:visible}
 .room-media.media-stack img,.room-media.media-stack video{position:static;inset:auto;width:100%;height:auto;display:block;border-radius:2px;object-fit:contain;transition:none;background:#000}
@@ -605,8 +612,14 @@ header.scrolled .nav-tel{color:var(--ink)}
           <div class="price-item"><span class="lab latin">주말</span><span class="val">600,000<small>원~</small></span></div>
         </div>
         <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
-          <a href="https://youtu.be/zSuOnKmabpQ?si=jj0prQgnrgV6xtTc" target="_blank" rel="noopener" class="btn-primary" style="padding:12px 24px">영상으로 구경하기 ↗</a>
-          <a href="https://m.blog.naver.com/banggok4052/223980049149" target="_blank" rel="noopener" class="btn-primary" style="padding:12px 24px;background:transparent;color:var(--clay);border-color:var(--clay)">블로그 구경하기 ↗</a>
+          <a href="https://youtu.be/zSuOnKmabpQ?si=jj0prQgnrgV6xtTc" target="_blank" rel="noopener" class="btn-brand btn-youtube">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814z"/><path fill="#FF0000" d="M10 15.5l5.5-3.5L10 8.5z"/></svg>
+            영상으로 구경하기
+          </a>
+          <a href="https://m.blog.naver.com/banggok4052/223980049149" target="_blank" rel="noopener" class="btn-brand btn-naver">
+            <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path fill="#fff" d="M13.562 10.7 6.286 0H0v20h6.438V9.3L13.714 20H20V0h-6.438z"/></svg>
+            블로그 구경하기
+          </a>
         </div>
       </div>
     </div>

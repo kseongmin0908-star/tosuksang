@@ -1,0 +1,8 @@
+# 작업용 원본/중간 산출물 (배포 불필요)
+assets/images_raw/
+assets/contact_sheet.png
+
+# OS / 편집기
+Thumbs.db
+.DS_Store
+*.tmp

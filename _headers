@@ -5,3 +5,7 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Content-Security-Policy: default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+# 정적 자산 장기 캐시 (이미지·영상) — 재방문 속도/Core Web Vitals 개선
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

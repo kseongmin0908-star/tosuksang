@@ -4,6 +4,9 @@ assets/contact_sheet.png
 assets/contact_big.png
 assets/strip_rooms.png
 
+# 로컬 미리보기 설정
+.claude/
+
 # OS / 편집기
 Thumbs.db
 .DS_Store
